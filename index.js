@@ -11,18 +11,23 @@ const config = require("./config");
 	await page.setViewport({width: 1920, height: 1080});
 	await page.setUserAgent(randomUserAgent.getRandom());
 
-	//navigate to URL
-  await page.goto(config.url);
-  // await page.screenshot({path: 'example.png'});
+	for (const el of config) {
+		for (const pruduct of el.products) {
 
-	//read price and title
-	await page.waitForSelector(config.selectors.tittle);
-	let tittle = await page.$eval(config.selectors.tittle, (el) => el.innerHTML);
-	console.log(tittle);
-
-	await page.waitForSelector(config.selectors.price);
-	let price = await page.$eval(config.selectors.price, (el) => el.innerHTML);
-	console.log(price);
+			//navigate to URL
+			await page.goto(pruduct.url);
+			// await page.screenshot({path: 'example.png'});
+		
+			//read price and title
+			await page.waitForSelector(pruduct.selectors.tittle);
+			let tittle = await page.$eval(pruduct.selectors.tittle, (el) => el.innerHTML);
+			console.log(tittle);
+		
+			await page.waitForSelector(pruduct.selectors.price);
+			let price = await page.$eval(pruduct.selectors.price, (el) => el.innerHTML);
+			console.log(price);
+		}
+	}
 
 	// close browser
   await browser.close();
