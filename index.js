@@ -1,7 +1,6 @@
 const puppeteer = require('puppeteer');
+const randomUserAgent = require("random-useragent");
 const config = require("./config");
-
-console.log(config);
 
 (async () => {
 
@@ -9,6 +8,8 @@ console.log(config);
   const browser = await puppeteer.launch({headless: false, slowMo: 300});
 	const context = await browser.createIncognitoBrowserContext();
   const page = await context.newPage();
+	await page.setViewport({width: 1920, height: 1080});
+	await page.setUserAgent(randomUserAgent.getRandom());
 
 	//navigate to URL
   await page.goto(config.url);
