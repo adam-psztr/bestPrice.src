@@ -1,6 +1,8 @@
 module.exports = [
 	{
 		category: "Fantasy",
+		targetPrice: 40,
+		fileName: "fantasy_book.txt",
 		products: [
 			{
 				url: "http://books.toscrape.com/catalogue/crown-of-midnight-throne-of-glass-2_888/index.html",
@@ -27,6 +29,8 @@ module.exports = [
 	},
 	{
 		category: "Fiction",
+		targetPrice: 20,
+		fileName: "fiction_book.txt",
 		products: [
 			{
 				url: "http://books.toscrape.com/catalogue/thirst_946/index.html",
