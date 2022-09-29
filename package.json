@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/adam-psztr/bestPrice.src#readme",
   "dependencies": {
-    "puppeteer": "^18.0.5"
+    "puppeteer": "^18.0.5",
+    "random-useragent": "^0.5.0"
   }
 }
