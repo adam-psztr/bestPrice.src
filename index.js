@@ -5,6 +5,13 @@ const config = require("./config");
 
 (async () => {
 
+	fs.readFile('products.json', 'utf8', function readFileCallback(err, data){
+    if (err){
+        console.log(err);
+    } else {
+    obj = JSON.parse(data);
+	}});
+
 	//open browser
   const browser = await puppeteer.launch({headless: true});
 	const context = await browser.createIncognitoBrowserContext();
@@ -38,13 +45,12 @@ const config = require("./config");
 		
 			//read price and title
 			await page.waitForSelector(pruduct.selectors.tittle);
-			let tittle = await page.$eval(pruduct.selectors.tittle, (el) => el.innerHTML);
+			let tittle = await page.$eval(pruduct.selectors.tittle, (el) => el.innerText);
 			tittle = tittle.trim();
 		
 			await page.waitForSelector(pruduct.selectors.price);
-			let price = await page.$eval(pruduct.selectors.price, (el) => el.innerHTML);
+			let price = await page.$eval(pruduct.selectors.price, (el) => el.innerText);
 			price = price.trim().replace(/[^0-9]/g, "");
-			price = parseInt(price)/100;
 
 			const result = `${date} - ${tittle} - ${price} ${price < el.targetPrice ? targetPriceStr : ""}`;
 
@@ -58,3 +64,14 @@ const config = require("./config");
 	console.log(err);
 	process.exit(1);
 });
+
+
+
+
+// const date = new Date();
+// const [month, day, year] = [date.getMonth(), date.getDate(), date.getFullYear()];
+// const [hour, minutes, seconds] = [date.getHours(), date.getMinutes(), date.getSeconds()];
+
+
+// var date      = new Date();
+// var timestamp = date.getTime();

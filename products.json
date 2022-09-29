@@ -1,0 +1,34 @@
+{
+	"queries": {
+		"product":
+			{
+				"query-date": "timestamp",
+				"product-name": "iphone",
+				"products": [
+					{
+						"product-seller": "istyle",
+						"product-price": "55555"
+					},
+					{
+						"product-seller": "apple",
+						"product-price": "55555"
+					}
+				]
+			},
+		"product2":
+			{
+				"query-date": "timestamp",
+				"product-name": "ipad",
+				"products": [
+					{
+						"product-seller": "istyle",
+						"product-price": "66665"
+					},
+					{
+						"product-seller": "apple",
+						"product-price": "45634"
+					}
+				]
+			}
+	}
+}
