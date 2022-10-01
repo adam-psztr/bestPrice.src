@@ -5,13 +5,15 @@ const config = require("./config");
 
 (async () => {
 
+	let jsonContent;
+
 	fs.readFile('products.json', 'utf8', function readFileCallback(err, data){
     if (err){
         console.log(err);
     } else {
-    obj = JSON.parse(data);
+    jsonContent = JSON.parse(data);
 	}});
-
+	
 	//open browser
   const browser = await puppeteer.launch({headless: true});
 	const context = await browser.createIncognitoBrowserContext();
@@ -20,103 +22,71 @@ const config = require("./config");
 	await page.setUserAgent(randomUserAgent.getRandom());
 	
 	let count = 0;
-
-	const targetPriceStr = "!!!!!";
+	let innerCount = 0;
+	let queryContent = {};
 	
 	for (const el of config) {
+		
+		let date = Date.now();
 
-		const logger = fs.createWriteStream(el.fileName, {flags: "a"});
-		logger.write(el.category + "\n");
+		queryContent["queryDate"] = date;
 
-		for (const pruduct of el.products) {
-			
-			let date = new Date();
-			date = date.toLocaleDateString("hu", {
-				day: "numeric",
-				month: "short",
-				year: "numeric"
-			});
-			
-			//navigate to URL
-			// await page.goto(pruduct.url);
-			// await page.screenshot({path: pruduct.selectors.pic + 'example.png'});
+		queryContent[el.product] = {
+			productName: el.productName,
+			productSellers: []
+		};
+		
+		for (const seller of el.sellers) {
 			
 			let tittle, price;
-			let webpage = "";
-
+			let sellerwebpage = "";
+			
 			try {
-				await page.goto(pruduct.url);
+				await page.goto(seller.url);
 			} catch (error) {
-				webpage = "hibás elérési útvonal";
-			}
-
-			// let tittle;
-			// await new Promise((resolve, reject) => {
-			// 	if(page.waitForSelector(pruduct.selectors.tittle)){
-			// 		resolve(tittle = page.$eval(pruduct.selectors.tittle, (el) => el.innerText));
-			// 	}else{
-			// 		reject(tittle = "");
-			// 	}
-			// 	tittle = tittle.trim();
-			// });
-		
-			// let price;
-			// await new Promise((resolve, reject) => {
-			// 	if(page.waitForSelector(pruduct.selectors.price)){
-			// 		resolve(price = page.$eval(pruduct.selectors.price, (el) => el.innerText));
-			// 	}else{
-			// 		reject(price = "");
-			// 	}
-			// 	price = price.trim().replace(/[^0-9]/g, "");
-			// });
-
+				sellerwebpage = "hibás elérési útvonal";
+			};
+						
 			try {
-				await page.waitForSelector(pruduct.selectors.tittle);
-				tittle = await page.$eval(pruduct.selectors.tittle, (el) => el.innerText);
-				tittle = tittle.trim();
+				await page.waitForSelector(seller.selectors.tittle);
+				tittle = await page.$eval(seller.selectors.tittle, (el) => el.innerText);
+				tittle = tittle.trim().replace(/[\n]/g, " ").replace(/[\xa0]/g, " ");
 			} catch (error) {
 				tittle = "sikertelen lekérdezés";
-			}
+			};
+
 			try {
-				await page.waitForSelector(pruduct.selectors.price);
-				price = await page.$eval(pruduct.selectors.price, (el) => el.innerText);
+				await page.waitForSelector(seller.selectors.price);
+				price = await page.$eval(seller.selectors.price, (el) => el.innerText);
 				price = price.trim().replace(/[^0-9]/g, "");
 			} catch (error) {
 				price = "sikertelen lekérdezés";
-			}
-
-			// read price and title
-			// await page.waitForSelector(pruduct.selectors.tittle);
-			// let tittle = await page.$eval(pruduct.selectors.tittle, (el) => el.innerText);
-			// tittle = tittle.trim();
+			};
 			
-			// await page.waitForSelector(pruduct.selectors.price);
-			// let price = await page.$eval(pruduct.selectors.price, (el) => el.innerText);
-			// price = price.trim().replace(/[^0-9]/g, "");
+			queryContent[el.product]["productSellers"].push({
+				productSeller: sellerwebpage=="" ? seller.seller : sellerwebpage,
+				productName: tittle,
+				productPrice: price,
+				productLink: seller.url
+			});
 			
-			const result = `${date} - ${webpage} ${tittle} - ${price} ${price < el.targetPrice ? targetPriceStr : ""}`;
-			
-			logger.write(result + "\n");
-
 			count++;
+			innerCount++;
 			console.log(count);
 		}
-	}
 
+		count+=10-innerCount;
+	}
+	
+	jsonContent["queries"].push(queryContent);
+	jsonContent = JSON.stringify(jsonContent);
+
+	const logger = fs.createWriteStream("products.json");
+	logger.write(jsonContent);
+	
 	// close browser
-  await browser.close();
+	await browser.close();
 })().catch(err=> {
 	console.log(err);
 	process.exit(1);
 });
-
-
-
-
-// const date = new Date();
-// const [month, day, year] = [date.getMonth(), date.getDate(), date.getFullYear()];
-// const [hour, minutes, seconds] = [date.getHours(), date.getMinutes(), date.getSeconds()];
-
-
-// var date      = new Date();
-// var timestamp = date.getTime();

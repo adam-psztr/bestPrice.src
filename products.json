@@ -1,67 +1,283 @@
 {
-	"queries": [
-		{
-			"query-date": "timestamp",
-			"iphone":
-				{
-					"product-name": "iphone 14 pro",
-					"product-sellers": [
-						{
-							"product-seller": "istyle",
-							"product-price": "55555",
-							"product-link": "config url"
-						},
-						{
-							"product-seller": "apple",
-							"product-price": "55555"
-						}
-					]
-				},
-			"ipad":
-				{
-					"product-name": "ipad air",
-					"product-sellers": [
-						{
-							"product-seller": "istyle",
-							"product-price": "55555"
-						},
-						{
-							"product-seller": "apple",
-							"product-price": "55555"
-						}
-					]
-				}
+	"queries": [{
+		"queryDate": 1664637390492,
+		"iphone-14-pro": {
+			"productName": "iPhone 14 PRO MAX 128 GB",
+			"productSellers": [{
+				"productSeller": "apple",
+				"productName": "iPhone 14 Pro\n6,1 hüvelykes kijelző¹",
+				"productPrice": "569990",
+				"productLink": "https://www.apple.com/hu/shop/buy-iphone/iphone-14-pro"
+			}, {
+				"productSeller": "istyle",
+				"productName": "iPhone 14 Pro",
+				"productPrice": "569900",
+				"productLink": "https://istyle.hu/iphone-14-pro.html?config_size=3574&color=3592&config_model=1322"
+			}, {
+				"productSeller": "mediamarkt",
+				"productName": "APPLE IPHONE 14 PRO 128 GB Asztrofekete Kártyafüggetlen Okostelefon",
+				"productPrice": "569999",
+				"productLink": "https://www.mediamarkt.hu/hu/product/_apple-iphone-14-pro-128-gb-asztrofekete-kártyafüggetlen-okostelefon-1396917.html"
+			}]
 		},
-		{
-			"query-date": "timestamp",
-			"iphone":
-				{
-					"product-name": "iphone 14 pro",
-					"product-sellers": [
-						{
-							"product-seller": "istyle",
-							"product-price": "55555"
-						},
-						{
-							"product-seller": "apple",
-							"product-price": "55555"
-						}
-					]
-				},
-			"ipad":
-				{
-					"product-name": "ipad air",
-					"product-sellers": [
-						{
-							"product-seller": "istyle",
-							"product-price": "55555"
-						},
-						{
-							"product-seller": "apple",
-							"product-price": "55555"
-						}
-					]
-				}
+		"Fiction": {
+			"productName": "proba",
+			"productSellers": [{
+				"productSeller": "proba1",
+				"productName": "Thirst",
+				"productPrice": "1727",
+				"productLink": "http://books.toscrape.com/catalogue/thirst_946/index.html"
+			}, {
+				"productSeller": "proba2",
+				"productName": "Tuesday Nights in 1980",
+				"productPrice": "2104",
+				"productLink": "http://books.toscrape.com/catalogue/tuesday-nights-in-1980_870/index.html"
+			}, {
+				"productSeller": "proba3",
+				"productName": "The First Hostage (J.B. Collins #2)",
+				"productPrice": "2585",
+				"productLink": "http://books.toscrape.com/catalogue/the-first-hostage-jb-collins-2_749/index.html"
+			}]
 		}
-	]
+	}, {
+		"queryDate": 1664637629884,
+		"iphone-14-pro": {
+			"productName": "iPhone 14 PRO MAX 128 GB",
+			"productSellers": [{
+				"productSeller": "apple",
+				"productName": "iPhone 14 Pro\n6,1 hüvelykes kijelző¹",
+				"productPrice": "569990",
+				"productLink": "https://www.apple.com/hu/shop/buy-iphone/iphone-14-pro"
+			}, {
+				"productSeller": "istyle",
+				"productName": "iPhone 14 Pro",
+				"productPrice": "569900",
+				"productLink": "https://istyle.hu/iphone-14-pro.html?config_size=3574&color=3592&config_model=1322"
+			}, {
+				"productSeller": "mediamarkt",
+				"productName": "APPLE IPHONE 14 PRO 128 GB Asztrofekete Kártyafüggetlen Okostelefon",
+				"productPrice": "569999",
+				"productLink": "https://www.mediamarkt.hu/hu/product/_apple-iphone-14-pro-128-gb-asztrofekete-kártyafüggetlen-okostelefon-1396917.html"
+			}]
+		},
+		"Fiction": {
+			"productName": "proba",
+			"productSellers": [{
+				"productSeller": "proba1",
+				"productName": "Thirst",
+				"productPrice": "1727",
+				"productLink": "http://books.toscrape.com/catalogue/thirst_946/index.html"
+			}, {
+				"productSeller": "proba2",
+				"productName": "Tuesday Nights in 1980",
+				"productPrice": "2104",
+				"productLink": "http://books.toscrape.com/catalogue/tuesday-nights-in-1980_870/index.html"
+			}, {
+				"productSeller": "proba3",
+				"productName": "The First Hostage (J.B. Collins #2)",
+				"productPrice": "2585",
+				"productLink": "http://books.toscrape.com/catalogue/the-first-hostage-jb-collins-2_749/index.html"
+			}]
+		}
+	}, {
+		"queryDate": 1664638044322,
+		"iphone-14-pro": {
+			"productName": "iPhone 14 PRO MAX 128 GB",
+			"productSellers": [{
+				"productSeller": "apple",
+				"productName": "sikertelen lekérdezés",
+				"productPrice": "sikertelen lekérdezés",
+				"productLink": "https://www.qapple.com/hu/shop/buy-iphone/iphone-14-pro"
+			}, {
+				"productSeller": "istyle",
+				"productName": "sikertelen lekérdezés",
+				"productPrice": "569900",
+				"productLink": "https://istyle.hu/iphone-14-pro.html?config_size=3574&color=3592&config_model=1322"
+			}, {
+				"productSeller": "mediamarkt",
+				"productName": "sikertelen lekérdezés",
+				"productPrice": "sikertelen lekérdezés",
+				"productLink": "https://www.mediamarkt.hu/hu/product/_apple-iphone-14-pro-128-gb-asztrofekete-kártyafüggetlen-okostelefon-1396917.html"
+			}]
+		},
+		"Fiction": {
+			"productName": "proba",
+			"productSellers": [{
+				"productSeller": "proba1",
+				"productName": "Thirst",
+				"productPrice": "1727",
+				"productLink": "http://books.toscrape.com/catalogue/thirst_946/index.html"
+			}, {
+				"productSeller": "proba2",
+				"productName": "Tuesday Nights in 1980",
+				"productPrice": "2104",
+				"productLink": "http://books.toscrape.com/catalogue/tuesday-nights-in-1980_870/index.html"
+			}, {
+				"productSeller": "proba3",
+				"productName": "The First Hostage (J.B. Collins #2)",
+				"productPrice": "2585",
+				"productLink": "http://books.toscrape.com/catalogue/the-first-hostage-jb-collins-2_749/index.html"
+			}]
+		}
+	}, {
+		"queryDate": 1664638432310,
+		"iphone-14-pro": {
+			"productName": "iPhone 14 PRO MAX 128 GB",
+			"productSellers": [{
+				"productSeller": "apple",
+				"productName": "sikertelen lekérdezés",
+				"productPrice": "sikertelen lekérdezés",
+				"productLink": "https://www.qapple.com/hu/shop/buy-iphone/iphone-14-pro"
+			}, {
+				"productSeller": "istyle",
+				"productName": "sikertelen lekérdezés",
+				"productPrice": "569900",
+				"productLink": "https://istyle.hu/iphone-14-pro.html?config_size=3574&color=3592&config_model=1322"
+			}, {
+				"productSeller": "mediamarkt",
+				"productName": "APPLE IPHONE 14 PRO 128 GB Asztrofekete Kártyafüggetlen Okostelefon",
+				"productPrice": "569999",
+				"productLink": "https://www.mediamarkt.hu/hu/product/_apple-iphone-14-pro-128-gb-asztrofekete-kártyafüggetlen-okostelefon-1396917.html"
+			}]
+		},
+		"Fiction": {
+			"productName": "proba",
+			"productSellers": [{
+				"productSeller": "proba1",
+				"productName": "Thirst",
+				"productPrice": "1727",
+				"productLink": "http://books.toscrape.com/catalogue/thirst_946/index.html"
+			}, {
+				"productSeller": "proba2",
+				"productName": "Tuesday Nights in 1980",
+				"productPrice": "2104",
+				"productLink": "http://books.toscrape.com/catalogue/tuesday-nights-in-1980_870/index.html"
+			}, {
+				"productSeller": "proba3",
+				"productName": "The First Hostage (J.B. Collins #2)",
+				"productPrice": "2585",
+				"productLink": "http://books.toscrape.com/catalogue/the-first-hostage-jb-collins-2_749/index.html"
+			}]
+		}
+	}, {
+		"queryDate": 1664638656473,
+		"iphone-14-pro": {
+			"productName": "iPhone 14 PRO MAX 128 GB",
+			"productSellers": [{
+				"productSeller": "apple",
+				"productName": "sikertelen lekérdezés",
+				"productPrice": "sikertelen lekérdezés",
+				"productLink": "https://www.qapple.com/hu/shop/buy-iphone/iphone-14-pro"
+			}, {
+				"productSeller": "istyle",
+				"productName": "sikertelen lekérdezés",
+				"productPrice": "569900",
+				"productLink": "https://istyle.hu/iphone-14-pro.html?config_size=3574&color=3592&config_model=1322"
+			}, {
+				"productSeller": "mediamarkt",
+				"productName": "APPLE IPHONE 14 PRO 128 GB Asztrofekete Kártyafüggetlen Okostelefon",
+				"productPrice": "569999",
+				"productLink": "https://www.mediamarkt.hu/hu/product/_apple-iphone-14-pro-128-gb-asztrofekete-kártyafüggetlen-okostelefon-1396917.html"
+			}]
+		},
+		"Fiction": {
+			"productName": "proba",
+			"productSellers": [{
+				"productSeller": "proba1",
+				"productName": "Thirst",
+				"productPrice": "1727",
+				"productLink": "http://books.toscrape.com/catalogue/thirst_946/index.html"
+			}, {
+				"productSeller": "proba2",
+				"productName": "Tuesday Nights in 1980",
+				"productPrice": "2104",
+				"productLink": "http://books.toscrape.com/catalogue/tuesday-nights-in-1980_870/index.html"
+			}, {
+				"productSeller": "proba3",
+				"productName": "The First Hostage (J.B. Collins #2)",
+				"productPrice": "2585",
+				"productLink": "http://books.toscrape.com/catalogue/the-first-hostage-jb-collins-2_749/index.html"
+			}]
+		}
+	}, {
+		"queryDate": 1664639012146,
+		"iphone-14-pro": {
+			"productName": "iPhone 14 PRO MAX 128 GB",
+			"productSellers": [{
+				"productSeller": "apple",
+				"productName": "sikertelen lekérdezés",
+				"productPrice": "sikertelen lekérdezés",
+				"productLink": "https://www.apple.com/hu/shop/buy-iphone/iphone-14-proqqq"
+			}, {
+				"productSeller": "istyle",
+				"productName": "iPhone 14 Pro",
+				"productPrice": "569900",
+				"productLink": "https://istyle.hu/iphone-14-pro.html?config_size=3574&color=3592&config_model=1322"
+			}, {
+				"productSeller": "hibás elérési útvonal",
+				"productName": "sikertelen lekérdezés",
+				"productPrice": "sikertelen lekérdezés",
+				"productLink": "https://www.qqqmediamarkt.hu/hu/product/_apple-iphone-14-pro-128-gb-asztrofekete-kártyafüggetlen-okostelefon-1396917.html"
+			}]
+		},
+		"Fiction": {
+			"productName": "proba",
+			"productSellers": [{
+				"productSeller": "proba1",
+				"productName": "Thirst",
+				"productPrice": "1727",
+				"productLink": "http://books.toscrape.com/catalogue/thirst_946/index.html"
+			}, {
+				"productSeller": "proba2",
+				"productName": "Tuesday Nights in 1980",
+				"productPrice": "2104",
+				"productLink": "http://books.toscrape.com/catalogue/tuesday-nights-in-1980_870/index.html"
+			}, {
+				"productSeller": "proba3",
+				"productName": "The First Hostage (J.B. Collins #2)",
+				"productPrice": "2585",
+				"productLink": "http://books.toscrape.com/catalogue/the-first-hostage-jb-collins-2_749/index.html"
+			}]
+		}
+	}, {
+		"queryDate": 1664639538408,
+		"iphone-14-pro": {
+			"productName": "iPhone 14 PRO MAX 128 GB",
+			"productSellers": [{
+				"productSeller": "apple",
+				"productName": "iPhone 14 Pro 6,1hüvelykes kijelző¹",
+				"productPrice": "569990",
+				"productLink": "https://www.apple.com/hu/shop/buy-iphone/iphone-14-pro"
+			}, {
+				"productSeller": "istyle",
+				"productName": "iPhone 14 Pro",
+				"productPrice": "569900",
+				"productLink": "https://istyle.hu/iphone-14-pro.html?config_size=3574&color=3592&config_model=1322"
+			}, {
+				"productSeller": "mediamarkt",
+				"productName": "APPLE IPHONE 14 PRO 128 GB Asztrofekete Kártyafüggetlen Okostelefon",
+				"productPrice": "569999",
+				"productLink": "https://www.mediamarkt.hu/hu/product/_apple-iphone-14-pro-128-gb-asztrofekete-kártyafüggetlen-okostelefon-1396917.html"
+			}]
+		},
+		"Fiction": {
+			"productName": "proba",
+			"productSellers": [{
+				"productSeller": "proba1",
+				"productName": "Thirst",
+				"productPrice": "1727",
+				"productLink": "http://books.toscrape.com/catalogue/thirst_946/index.html"
+			}, {
+				"productSeller": "proba2",
+				"productName": "Tuesday Nights in 1980",
+				"productPrice": "2104",
+				"productLink": "http://books.toscrape.com/catalogue/tuesday-nights-in-1980_870/index.html"
+			}, {
+				"productSeller": "proba3",
+				"productName": "The First Hostage (J.B. Collins #2)",
+				"productPrice": "2585",
+				"productLink": "http://books.toscrape.com/catalogue/the-first-hostage-jb-collins-2_749/index.html"
+			}]
+		}
+	}]
 }
