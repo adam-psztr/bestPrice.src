@@ -38,7 +38,7 @@ const config = require("./config");
 		
 		for (const seller of el.sellers) {
 			
-			let tittle, price;
+			let title, price;
 			let sellerwebpage = "";
 			
 			try {
@@ -48,11 +48,11 @@ const config = require("./config");
 			};
 						
 			try {
-				await page.waitForSelector(seller.selectors.tittle);
-				tittle = await page.$eval(seller.selectors.tittle, (el) => el.innerText);
-				tittle = tittle.trim().replace(/[\n]/g, " ").replace(/[\xa0]/g, " ");
+				await page.waitForSelector(seller.selectors.title);
+				title = await page.$eval(seller.selectors.title, (el) => el.innerText);
+				title = title.trim().replace(/[\n]/g, " ").replace(/[\xa0]/g, " ");
 			} catch (error) {
-				tittle = "sikertelen lekérdezés";
+				title = "sikertelen lekérdezés";
 			};
 
 			try {
@@ -65,7 +65,7 @@ const config = require("./config");
 			
 			queryContent[el.product]["productSellers"].push({
 				productSeller: sellerwebpage=="" ? seller.seller : sellerwebpage,
-				productName: tittle,
+				productName: title,
 				productPrice: price,
 				productLink: seller.url
 			});
