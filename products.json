@@ -1,34 +1,67 @@
 {
-	"queries": {
-		"product":
-			{
-				"query-date": "timestamp",
-				"product-name": "iphone",
-				"products": [
-					{
-						"product-seller": "istyle",
-						"product-price": "55555"
-					},
-					{
-						"product-seller": "apple",
-						"product-price": "55555"
-					}
-				]
-			},
-		"product2":
-			{
-				"query-date": "timestamp",
-				"product-name": "ipad",
-				"products": [
-					{
-						"product-seller": "istyle",
-						"product-price": "66665"
-					},
-					{
-						"product-seller": "apple",
-						"product-price": "45634"
-					}
-				]
-			}
-	}
+	"queries": [
+		{
+			"query-date": "timestamp",
+			"iphone":
+				{
+					"product-name": "iphone 14 pro",
+					"product-sellers": [
+						{
+							"product-seller": "istyle",
+							"product-price": "55555",
+							"product-link": "config url"
+						},
+						{
+							"product-seller": "apple",
+							"product-price": "55555"
+						}
+					]
+				},
+			"ipad":
+				{
+					"product-name": "ipad air",
+					"product-sellers": [
+						{
+							"product-seller": "istyle",
+							"product-price": "55555"
+						},
+						{
+							"product-seller": "apple",
+							"product-price": "55555"
+						}
+					]
+				}
+		},
+		{
+			"query-date": "timestamp",
+			"iphone":
+				{
+					"product-name": "iphone 14 pro",
+					"product-sellers": [
+						{
+							"product-seller": "istyle",
+							"product-price": "55555"
+						},
+						{
+							"product-seller": "apple",
+							"product-price": "55555"
+						}
+					]
+				},
+			"ipad":
+				{
+					"product-name": "ipad air",
+					"product-sellers": [
+						{
+							"product-seller": "istyle",
+							"product-price": "55555"
+						},
+						{
+							"product-seller": "apple",
+							"product-price": "55555"
+						}
+					]
+				}
+		}
+	]
 }
