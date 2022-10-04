@@ -6,13 +6,13 @@
 			"subProductName": "pink",
 			"productSellers": [{
 				"productSeller": "mediamarkt",
-				"productName": "x",
+				"productName": "X",
 				"productPrice": "0",
 				"productLink": "https://www.mediamarkt.hu/hu/product/_apple-iphone-14-pro-128-gb-asztrofekete-kártyafüggetlen-okostelefon-1396917.html"
 			}, null, {
 				"productSeller": "apple",
 				"productName": "iPhone 14 Pro 6,1 hüvelykes kijelző¹",
-				"productPrice": "569990",
+				"productPrice": "0",
 				"productLink": "https://www.apple.com/hu/shop/buy-iphone/iphone-14-pro"
 			}]
 		},
@@ -21,7 +21,7 @@
 			"mainProductName": "proba",
 			"subProductName": "",
 			"productSellers": [{
-				"productSeller": "proba1",
+				"productSeller": "X",
 				"productName": "Thirst",
 				"productPrice": "1727",
 				"productLink": "http://books.toscrape.com/catalogue/thirst_946/index.html"

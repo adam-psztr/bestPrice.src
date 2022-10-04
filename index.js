@@ -51,7 +51,7 @@ const config = require("./config");
 				await page.goto(seller.url);
 			} catch (error) {
 				errorMessage += "wrong url";
-				sellerwebpage = "x";
+				sellerwebpage = "X";
 			};
 						
 			try {
@@ -60,7 +60,7 @@ const config = require("./config");
 				title = title.trim().replace(/[\n]/g, " ").replace(/[\xa0]/g, " ");
 			} catch (error) {
 				errorMessage == "" ? errorMessage = "wrong title selector" : errorMessage += " * wrong title selector";
-				title = "x";
+				title = "X";
 			};
 			
 			try {
@@ -73,7 +73,7 @@ const config = require("./config");
 			};
 			
 			queryContent[el.product]["productSellers"].push({
-				productSeller: sellerwebpage=="" ? seller.seller : sellerwebpage,
+				productSeller: sellerwebpage == "" ? seller.seller : sellerwebpage,
 				productName: title,
 				productPrice: price,
 				productLink: seller.url
