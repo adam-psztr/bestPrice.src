@@ -21,30 +21,37 @@ const config = require("./config");
 	await page.setViewport({width: 1920, height: 1080});
 	await page.setUserAgent(randomUserAgent.getRandom());
 	
-	let count = 0;
-	let innerCount = 0;
+	let productCount = 1;
+	let sellerCount = 1;
 	let queryContent = {};
+	let productPriceArray = [];
 	
 	for (const el of config) {
-		
+
+		console.log(`product(${productCount}/${config.length}): ${el.mainProductName} ${el.subProductName} -----v`);
+
 		let date = Date.now();
-
-		queryContent["queryDate"] = date;
-
+		
 		queryContent[el.product] = {
-			productName: el.productName,
+			queryDate: date,
+			mainProductName: el.mainProductName,
+			subProductName: el.subProductName,
 			productSellers: []
 		};
+
+		let sellerPriceArray = [];
 		
 		for (const seller of el.sellers) {
 			
 			let title, price;
 			let sellerwebpage = "";
+			let errorMessage = "";
 			
 			try {
 				await page.goto(seller.url);
 			} catch (error) {
-				sellerwebpage = "hibás elérési útvonal";
+				errorMessage += "wrong url";
+				sellerwebpage = "x";
 			};
 						
 			try {
@@ -52,15 +59,17 @@ const config = require("./config");
 				title = await page.$eval(seller.selectors.title, (el) => el.innerText);
 				title = title.trim().replace(/[\n]/g, " ").replace(/[\xa0]/g, " ");
 			} catch (error) {
-				title = "sikertelen lekérdezés";
+				errorMessage == "" ? errorMessage = "wrong title selector" : errorMessage += " * wrong title selector";
+				title = "x";
 			};
-
+			
 			try {
 				await page.waitForSelector(seller.selectors.price);
 				price = await page.$eval(seller.selectors.price, (el) => el.innerText);
 				price = price.trim().replace(/[^0-9]/g, "");
 			} catch (error) {
-				price = "sikertelen lekérdezés";
+				errorMessage == "" ? errorMessage = "wrong price selector" : errorMessage += " * wrong price selector";
+				price = "0";
 			};
 			
 			queryContent[el.product]["productSellers"].push({
@@ -69,16 +78,50 @@ const config = require("./config");
 				productPrice: price,
 				productLink: seller.url
 			});
+
+			sellerPriceArray.push(price);
 			
-			count++;
-			innerCount++;
-			console.log(count);
+			console.log(errorMessage == "" ? ` > seller(${sellerCount}/${el.sellers.length}): ${seller.seller} >> OK` : `!> seller(${sellerCount}/${el.sellers.length}): ${seller.seller} >> ` + errorMessage);
+			sellerCount++;
 		}
 
-		count+=10-innerCount;
+		sellerPriceArray.sort();
+
+		let productSellersArray = queryContent[el.product]["productSellers"];
+		let temporaryProductSellersArray = [];
+
+		while (productSellersArray.length>0) {
+			let firstSeEl = productSellersArray.shift();
+			temporaryProductSellersArray[sellerPriceArray.indexOf(firstSeEl.productPrice)] = firstSeEl;
+		};
+
+		queryContent[el.product]["productSellers"] = temporaryProductSellersArray;
+
+		productPriceArray.push(sellerPriceArray[0]);
+
+		sellerCount = 1;
+		productCount++;
 	}
-	
-	jsonContent["queries"].push(queryContent);
+
+	productPriceArray.sort();
+
+	let temporaryProductsArray = [];
+
+	let queryContentKeys = Object.keys(queryContent);
+
+	while (queryContentKeys.length>0) {
+		let firstPrEl = queryContentKeys.shift();
+		temporaryProductsArray[productPriceArray.indexOf(queryContent[firstPrEl]["productSellers"][0].productPrice)] = firstPrEl;
+	};
+
+	queryContent.sortArray = {
+		ascendingByPrice: [...temporaryProductsArray],
+		descendingByPrice: [...temporaryProductsArray].reverse(),
+		ascendingAccordingToAbc: [...temporaryProductsArray].sort((a, b) => a.localeCompare(b)),
+		descendingAccordingToAbc: [...temporaryProductsArray].sort((a, b) => a.localeCompare(b)).reverse()
+	};
+
+	jsonContent["queries"] = (queryContent);
 	jsonContent = JSON.stringify(jsonContent);
 
 	const logger = fs.createWriteStream("products.json");

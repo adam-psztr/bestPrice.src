@@ -1,1 +1,47 @@
-{"queries":[]}
+{
+	"queries": {
+		"iphone-14-pro": {
+			"queryDate": 1664921021305,
+			"mainProductName": "iPhone 14 PRO MAX 128 GB",
+			"subProductName": "pink",
+			"productSellers": [{
+				"productSeller": "mediamarkt",
+				"productName": "x",
+				"productPrice": "0",
+				"productLink": "https://www.mediamarkt.hu/hu/product/_apple-iphone-14-pro-128-gb-asztrofekete-kártyafüggetlen-okostelefon-1396917.html"
+			}, null, {
+				"productSeller": "apple",
+				"productName": "iPhone 14 Pro 6,1 hüvelykes kijelző¹",
+				"productPrice": "569990",
+				"productLink": "https://www.apple.com/hu/shop/buy-iphone/iphone-14-pro"
+			}]
+		},
+		"Fiction": {
+			"queryDate": 1664921148668,
+			"mainProductName": "proba",
+			"subProductName": "",
+			"productSellers": [{
+				"productSeller": "proba1",
+				"productName": "Thirst",
+				"productPrice": "1727",
+				"productLink": "http://books.toscrape.com/catalogue/thirst_946/index.html"
+			}, {
+				"productSeller": "proba2",
+				"productName": "Tuesday Nights in 1980",
+				"productPrice": "2104",
+				"productLink": "http://books.toscrape.com/catalogue/tuesday-nights-in-1980_870/index.html"
+			}, {
+				"productSeller": "proba3",
+				"productName": "The First Hostage (J.B. Collins #2)",
+				"productPrice": "2585",
+				"productLink": "http://books.toscrape.com/catalogue/the-first-hostage-jb-collins-2_749/index.html"
+			}]
+		},
+		"sortArray": {
+			"ascendingByPrice": ["iphone-14-pro", "Fiction"],
+			"descendingByPrice": ["Fiction", "iphone-14-pro"],
+			"ascendingAccordingToAbc": ["Fiction", "iphone-14-pro"],
+			"descendingAccordingToAbc": ["iphone-14-pro", "Fiction"]
+		}
+	}
+}
