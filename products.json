@@ -1,7 +1,7 @@
 {
 	"queries": {
 		"iphone-14-pro": {
-			"queryDate": 1665094227022,
+			"queryDate": 1666789427496,
 			"mainProductName": "iPhone 14 PRO MAX 128 GB",
 			"subProductName": "pink",
 			"productSellers": [{
@@ -19,13 +19,13 @@
 			}, {
 				"productSeller": "mediamarkt",
 				"productName": "APPLE IPHONE 14 PRO 128 GB Asztrofekete Kártyafüggetlen Okostelefon",
-				"productPrice": "569999",
+				"productPrice": "999999999",
 				"productDiscountPrice": "999999999",
 				"productLink": "https://www.mediamarkt.hu/hu/product/_apple-iphone-14-pro-128-gb-asztrofekete-kártyafüggetlen-okostelefon-1396917.html"
 			}]
 		},
 		"Fiction": {
-			"queryDate": 1665094295482,
+			"queryDate": 1666789527076,
 			"mainProductName": "proba",
 			"subProductName": "",
 			"productSellers": [{
@@ -49,32 +49,32 @@
 			}]
 		},
 		"tejfol": {
-			"queryDate": 1665094387653,
+			"queryDate": 1666789619718,
 			"mainProductName": "Mizo tejföl 20%",
 			"subProductName": "330 g",
 			"productSellers": [{
-				"productSeller": "Tesco",
-				"productName": "Mizo tejföl 20% 330 g",
-				"productPrice": "839",
-				"productDiscountPrice": "999999999",
-				"productLink": "https://bevasarlas.tesco.hu/groceries/hu-HU/products/2004003218682"
-			}, {
 				"productSeller": "kifli",
 				"productName": "Mizo Tejföl 20%",
 				"productPrice": "869",
 				"productDiscountPrice": "869",
 				"productLink": "https://www.kifli.hu/32167-mizo-tejfol-20"
 			}, {
+				"productSeller": "Tesco",
+				"productName": "Mizo tejföl 20% 330 g",
+				"productPrice": "899",
+				"productDiscountPrice": "999999999",
+				"productLink": "https://bevasarlas.tesco.hu/groceries/hu-HU/products/2004003218682"
+			}, {
 				"productSeller": "SPAR",
 				"productName": "MIZO TEJFÖL 20% 330 G",
-				"productPrice": "885",
-				"productDiscountPrice": "999999999",
+				"productPrice": "599",
+				"productDiscountPrice": "885268182",
 				"productLink": "https://www.spar.hu/onlineshop/mizo-tejfol-20-330-g/p/361462004"
 			}]
 		},
 		"sortArray": {
-			"ascendingByPrice": ["Fiction", "iphone-14-pro", "tejfol"],
-			"descendingByPrice": ["tejfol", "iphone-14-pro", "Fiction"],
+			"ascendingByPrice": ["tejfol", "Fiction", "iphone-14-pro"],
+			"descendingByPrice": ["iphone-14-pro", "Fiction", "tejfol"],
 			"ascendingAccordingToAbc": ["Fiction", "iphone-14-pro", "tejfol"],
 			"descendingAccordingToAbc": ["tejfol", "iphone-14-pro", "Fiction"]
 		}
